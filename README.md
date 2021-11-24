@@ -1,6 +1,7 @@
 # MujocoPyDocker
 Dockerizing Mujoco_py
 
-# Installing Docker
+## Installing Docker
 Follow steps from the official Docker [site](https://docs.docker.com/engine/install/ubuntu/)
-
+Or Install using InstallDocker.sh script.
+##
