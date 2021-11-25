@@ -22,16 +22,14 @@ apt-get update
 apt-get apt-get install ca-certificates curl gnupg lsb-release
 
 #Add Docker’s official GPG key:
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg 
-gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
 
 #set up the stable repository
-echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" 
-tee /etc/apt/sources.list.d/docker.list > /dev/null
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | tee /etc/apt/sources.list.d/docker.list > /dev/null
 
 #installing docker engine
 apt-get update
-apt-get install docker-ce docker-ce-cli containerd.io
+apt-get install -y docker-ce docker-ce-cli containerd.io
 
 echo "Installation done if no errors above"
 echo
@@ -40,4 +38,10 @@ sleep 1
 
 docker run hello-world
 
+sudo groupadd docker
 
+sudo usermod -aG docker $USER
+
+newgrp docker
+
+echo "Restart..."
