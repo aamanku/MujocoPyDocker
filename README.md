@@ -52,6 +52,24 @@ Run `testmj.py` from the current workspace. The workspace should be same folder 
 
 Finally close the Container bash by typing `exit` in the terminal where `StartContainer.sh` was ran.
 
+## On Windows
+Yes you read it right. We can run the docker container on wsl2.
+[Install WSL](https://docs.microsoft.com/en-us/windows/wsl/install) and enable wsl2, lookup tutorials on internet. Install Ubuntu 20.04 available from Microsoft Store.
+
+[Install Docker](https://docs.docker.com/desktop/windows/install/).
+
+Once you access to ubuntu terminal change directory to one containing files in this repo.
+
+Run `docker build -t mjdocker .` to build the image. After run it `docker run --rm -it mjdocker bash`. You will see your container in windows docker GUI.
+
+### Rendering on windows
+I followed steps in this [link](https://marinerobotics.gtorg.gatech.edu/running-ros-with-gui-in-docker-using-windows-subsystem-for-linux-2-wsl2/).
+
+Install X server for windows VcXsrv.
+
+Run the X server on windows and start container in the ubuntu terminal with command `docker run --rm -it --name mjdocker_container -e DISPLAY=host.docker.internal:0.0 -e LIBGL_ALWAYS_INDIRECT=0 mjdocker bash`.
+
+You should be able to see graphics output on VcXsrv window when you use MjViewer in the container. You should be able to start developing in VSCode similar as in native Ubuntu.
 
 
 
