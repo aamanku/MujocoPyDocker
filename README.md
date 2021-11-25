@@ -3,6 +3,8 @@ Dockerizing Mujoco_py.
 
 I am a Grad Student and need it for simulating robots!
 
+Working on Ubuntu 20.04 LTS
+
 ## Installing Docker
 Follow steps from the official Docker [site](https://docs.docker.com/engine/install/ubuntu/)
 
