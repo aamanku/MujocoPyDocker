@@ -35,3 +35,8 @@ sim.step()
 print(sim.data.qpos)
 ```
 
+## Using it
+Changes made in container are not persistant. Therefore you can mount your local directory in the container with desired path with the command `sudo docker run -it -v [localDir]:[mountDir] mjdocker bash`
+
+example: `sudo docker run -it -v $(pwd):$(pwd) mjdocker bash` will mount current directory in container with same path.
+
