@@ -45,6 +45,11 @@ New window will open with bottom bar saing working in container
 
 You may have to install extensions again in the container for python editing or other languages. Do as you wish.
 
+Run `testmj.py` from the current workspace. The workspace should be same folder where the `StartContainer.sh` script was ran. You should see the humanoid falling
+
+![Screenshot from 2021-11-25 00-45-56](https://user-images.githubusercontent.com/55757512/143386718-66967879-62f6-4f7d-9d2b-e40fa0557f64.png)
+
+
 Finally close the Container bash by typing `exit` in the terminal where `StartContainer.sh` was ran.
 
 
