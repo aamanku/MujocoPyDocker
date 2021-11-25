@@ -19,7 +19,8 @@ After build is complete you can access container's bash with `sudo docker run --
 
 To play with `mujoco_py` type following in the bash.
 
-```$ ipython
+```
+$ ipython
 import mujoco_py
 import os
 mj_path = mujoco_py.utils.discover_mujoco()
