@@ -8,35 +8,21 @@ Working on Ubuntu 20.04 LTS
 ## Installing Docker
 Follow steps from the official Docker [site](https://docs.docker.com/engine/install/ubuntu/)
 
+Make docker usable by non-root user [site](https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user)
+
 Or Install using `sudo sh InstallDocker.sh` script.
 
-Run `sudo docker run hello-world` to see if everything is working.
+Run `docker run hello-world` to see if everything is working.
 
 ## Building Container
-We will be using a [miniconda image](https://hub.docker.com/r/continuumio/miniconda3) as the base.
+We will be using a [Ubuntu 20.04 image](https://hub.docker.com/_/ubuntu) as the base.
 
-Run `sudo docker build -t mjdocker .` (don't forget .) with `Dockerfile` and `environment.yml` in the same directory.
+Run `docker build -t mjdocker .` (don't forget .) with `Dockerfile` in the directory.
 
-After build is complete you can access container's bash with `sudo docker run --rm -it mjdocker bash`.
+After build is complete you can access container's bash with `docker run --rm -it mjdocker bash`.
 
-To play with `mujoco_py` type following in the bash.
+## Setting up VSCode
+Install vscode by downloading it from offical [website](https://code.visualstudio.com/download)
 
-```
-$ ipython
-import mujoco_py
-import os
-mj_path = mujoco_py.utils.discover_mujoco()
-xml_path = os.path.join(mj_path, 'model', 'humanoid.xml')
-model = mujoco_py.load_model_from_path(xml_path)
-sim = mujoco_py.MjSim(model)
-
-print(sim.data.qpos)
-sim.step()
-print(sim.data.qpos)
-```
-
-## Using it
-Changes made in container are not persistant. Therefore you can mount your local directory in the container with desired path with the command `sudo docker run -it -v [localDir]:[mountDir] mjdocker bash`
-
-example: `sudo docker run -it -v $(pwd):$(pwd) mjdocker bash` will mount current directory in container with same path.
-
+Install `Python`, `Docker`, and `Remote-Containers` extensions
+![Extensions](https://user-images.githubusercontent.com/55757512/143383724-62203620-e51e-471d-a67e-5dbf40c53591.png)
