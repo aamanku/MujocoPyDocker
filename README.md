@@ -30,5 +30,6 @@ sim = mujoco_py.MjSim(model)
 
 print(sim.data.qpos)
 sim.step()
-print(sim.data.qpos)```
+print(sim.data.qpos)
+```
 
