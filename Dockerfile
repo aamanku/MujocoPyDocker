@@ -6,7 +6,7 @@
 # Date:11/25/2021
 #	Added working hardware acceleration for intel see #http://wiki.ros.org/docker/Tutorials/Hardware%20Acceleration
 # Date:1/28/2022
-#	Added cvxpy, pyquaternion, matplotlib. see#https://stackoverflow.com/questions/63047165/simple-docker-container-to-show-matplotlib-plots
+#	Added cvxpy, pyquaternion, scipy, matplotlib. see#https://stackoverflow.com/questions/63047165/simple-docker-container-to-show-matplotlib-plots
 #		python3 <<EOF
 #		import matplotlib
 #		matplotlib.use('TkAgg')
@@ -36,6 +36,7 @@ RUN pip install sympy
 RUN pip install casadi
 RUN pip install cvxpy
 RUN pip install pyquaternion
+RUN pip install scipy
 
 
 # importing mujoco_py once to build it
