@@ -26,7 +26,7 @@ RUN apt install -y patchelf
 RUN apt install -y libosmesa6-dev libgl1-mesa-glx libglfw3 libgl1-mesa-dri
 RUN apt install -y tk
 RUN apt install -y python3-tk
-RUN apt install -y python3-matplolib
+#RUN apt install -y python3-matplolib
 
 #http://wiki.ros.org/docker/Tutorials/Hardware%20Acceleration
 RUN rm -rf /var/lib/apt/lists/*
@@ -37,6 +37,7 @@ RUN pip install casadi
 RUN pip install cvxpy
 RUN pip install pyquaternion
 RUN pip install scipy
+RUN pip install matplotlib
 
 
 # importing mujoco_py once to build it
